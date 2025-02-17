@@ -45,7 +45,9 @@ class _HomePageState extends State<HomePage> {
             padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
             child: Row(
               children: [
-                Text("I Want to "),
+                Text("I Want to ", style: TextStyle(
+                  fontSize: 32,
+                ),),
                 Text("Eat", style: TextStyle(
                   //Tamaño de letras
                   fontSize: 32,
@@ -66,9 +68,9 @@ class _HomePageState extends State<HomePage> {
             child: TabBarView(children: [
               DonutTab(),
               BurguerTab(),
+              SmoothieTab(),
               PancakesTab(),
               PizzaTab(),
-              SmoothieTab(),
               
             
             ]),
