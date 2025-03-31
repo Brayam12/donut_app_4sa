@@ -7,12 +7,15 @@ class DonutTile extends StatelessWidget {
   final dynamic donutColor;
   final String imageName;
 
+  final dynamic donutStore;
+
   const DonutTile(
       {super.key,
       required this.donutFlavor,
+      required this.donutStore,
       required this.donutPrice,
       required this.donutColor,
-      required this.imageName});
+      required this.imageName,});
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +63,7 @@ class DonutTile extends StatelessWidget {
                 color: donutColor[800],
               ),),
 
-              Text("Dunkin's", style: TextStyle(
+              Text(donutStore, style: TextStyle(
                 fontSize: MediaQuery.of(context).size.width * 0.03,
                 color: donutColor[300],
               ),),
@@ -69,12 +72,16 @@ class DonutTile extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  IconButton(onPressed: (){}, icon: Icon(Icons.favorite_border, color: donutColor[800], size: 30,)),
+                  IconButton(onPressed: (){}, icon: Icon(Icons.favorite_border, color: donutColor[800], size: MediaQuery.of(context).size.width * 0.08,)),
                   TextButton(onPressed: (){}, child: Text("Add", style: TextStyle(
-                    color: donutColor[800], fontSize: MediaQuery.of(context).size.width * 0.04, 
-                    decoration: TextDecoration.underline, decorationColor: donutColor[800]
-                  ),),),
-                  
+                    color: donutColor[800], 
+                    fontSize: MediaQuery.of(context).size.width * 0.045, 
+                    decoration: TextDecoration.underline,
+                    decorationColor: donutColor[800], 
+                    fontWeight: FontWeight.w900
+                  ),
+                  ),
+                  ),
                 ],
               ),
           
