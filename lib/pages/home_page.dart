@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
              child: Icon(Icons.person),
            )],
         ),
-        body: Column(
+        body: Column( 
           children:[
           //1, Texto principal (Text)
           Padding(
