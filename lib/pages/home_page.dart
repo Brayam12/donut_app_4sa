@@ -13,15 +13,14 @@ class HomePage extends StatefulWidget {
   @override
   State<HomePage> createState() => _HomePageState();
 }
-
 class _HomePageState extends State<HomePage> {
   List<Widget> myTabs = [
-    MyTab(iconPath: "lib/icons/donut.png",),
-    MyTab(iconPath: "lib/icons/burger.png",),
-    MyTab(iconPath: "lib/icons/smoothie.png",),
-    MyTab(iconPath: "lib/icons/pancakes.png",),
-    MyTab(iconPath: "lib/icons/pizza.png",),
-  ];
+  MyTab(iconPath: "lib/icons/donut.png", label: "Donut"),
+  MyTab(iconPath: "lib/icons/burger.png", label: "Burguer"),
+  MyTab(iconPath: "lib/icons/smoothie.png", label: "Smoothie"),
+  MyTab(iconPath: "lib/icons/pancakes.png", label: "Pancakes"),
+  MyTab(iconPath: "lib/icons/pizza.png", label: "Pizza"),
+];
 
   @override
   Widget build(BuildContext context) {

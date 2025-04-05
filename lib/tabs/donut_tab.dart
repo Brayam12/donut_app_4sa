@@ -5,10 +5,14 @@ class DonutTab extends StatelessWidget {
   //list of donuts
   final List donutsOnSale = [
     // [ donutFlavor,donutStore, donutPrice, donutColor, imageName ]
-    ["Ice Cream","Krispy Kreeme", "36", Colors.blue, "lib/images/icecream_donut.png"],
-    ["Strawberry","Dunkin's", "45", Colors.red, "lib/images/strawberry_donut.png"],
-    ["Grape Ape","Donut Tec", "84", Colors.purple, "lib/images/grape_donut.png"],
-    ["Choco","Rafa Donut's", "95", Colors.brown, "lib/images/chocolate_donut.png"],
+    ["Fresa","Krispy Kreeme", "36", Colors.red, "lib/images/Dona_1.png"],
+    ["Helado","Dunkin's", "45", Colors.blue, "lib/images/Dona_2.png"],
+    ["Chocomenta","Donut Tec", "84", Colors.green, "lib/images/Dona_3.png"],
+    ["Chocolate","Rafa Donut's", "95", Colors.brown, "lib/images/Dona_4.png"],
+    ["Chispas","Tim Hortons", "60", Colors.pink, "lib/images/Dona_5.png"],
+    ["Integral","Mister Donut", "25", Colors.amber, "lib/images/Dona_6.png"],
+    ["Glaseado","La esperanza", "53", Colors.purple, "lib/images/Dona_7.png"],
+    ["Rellena","Tere Cazola", "88", Colors.cyan, "lib/images/Dona_8.png"],
   ];
 
 
@@ -25,7 +29,7 @@ class DonutTab extends StatelessWidget {
         //Proporción entre ancho y alto
         childAspectRatio: 1/1.5), 
       //¿Cuántos elementos va a tener?
-      itemCount: 4,
+      itemCount: 8,
       padding: const EdgeInsets.all(12),
       //¿Qué elemento se construira?
       itemBuilder: (context, index){
