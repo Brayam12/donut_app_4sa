@@ -1,9 +1,10 @@
-import 'package:donut_app_4sa/utils/donut_tile.dart';
+import 'package:donut_app_4sa/utils/burguer_tile.dart';
 import 'package:flutter/material.dart';
 
 class BurguerTab extends StatelessWidget {
+  final Function(double) onAdd;
   //list of donuts
-  final List donutsOnSale = [
+  final List burguersOnsale = [
     // [ donutFlavor,donutStore, donutPrice, donutColor, imageName ]
     ["Doble Carne","Karl's jr", "109", Colors.red, "lib/images/Burguer_1.png"],
     ["CangreBurguer","Crusaceo Cascarudo", "90", Colors.blue, "lib/images/Burguer_2.png"],
@@ -17,32 +18,31 @@ class BurguerTab extends StatelessWidget {
 
 
   
-  BurguerTab({super.key});
+ BurguerTab({super.key, required this.onAdd});
 
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      //prepa 1: Como se va a organizar
+      //Prepa 1: como se va a organizar
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        //Número de columnas
+        //Numero de columnas
         crossAxisCount: 2,
-        //Proporción entre ancho y alto
-        childAspectRatio: 1/1.5), 
-      //¿Cuántos elementos va a tener?
+        //Proporcion entre ancho y alto 
+        childAspectRatio: 1/1.6),
+      //Cuantos elementos 
       itemCount: 8,
-      padding: const EdgeInsets.all(12),
-      //¿Qué elemento se construira?
+      padding: EdgeInsets.all(12),
+      //como se construiran  
       itemBuilder: (context, index){
-        return DonutTile(
-          donutFlavor: donutsOnSale[index][0],
-          donutStore: donutsOnSale[index][1],
-          donutPrice: donutsOnSale[index][2],
-          donutColor: donutsOnSale[index][3],
-          imageName: donutsOnSale[index][4],
+        return BurguerTile(
+          burguerFlavor : burguersOnsale[index][0],
+          burguerStore: burguersOnsale[index][1],
+          burguerPrice : burguersOnsale[index][2],
+          burguerColor : burguersOnsale[index][3],
+          imageName : burguersOnsale[index][4],
+          onAdd: onAdd
           
-
         );
-
       }
     );
   }

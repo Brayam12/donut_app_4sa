@@ -2,8 +2,10 @@ import 'package:donut_app_4sa/utils/donut_tile.dart';
 import 'package:flutter/material.dart';
 
 class DonutTab extends StatelessWidget {
+  final Function(double) onAdd;
   //list of donuts
-  final List donutsOnSale = [
+  DonutTab({super.key, required this.onAdd});
+    final List<List<dynamic>> donutsOnSale = [
     // [ donutFlavor,donutStore, donutPrice, donutColor, imageName ]
     ["Fresa","Krispy Kreeme", "36", Colors.red, "lib/images/Dona_1.png"],
     ["Helado","Dunkin's", "45", Colors.blue, "lib/images/Dona_2.png"],
@@ -17,7 +19,6 @@ class DonutTab extends StatelessWidget {
 
 
   
-  DonutTab({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +28,7 @@ class DonutTab extends StatelessWidget {
         //Número de columnas
         crossAxisCount: 2,
         //Proporción entre ancho y alto
-        childAspectRatio: 1/1.5), 
+        childAspectRatio: 1/1.6), 
       //¿Cuántos elementos va a tener?
       itemCount: 8,
       padding: const EdgeInsets.all(12),
@@ -39,6 +40,7 @@ class DonutTab extends StatelessWidget {
           donutPrice: donutsOnSale[index][2],
           donutColor: donutsOnSale[index][3],
           imageName: donutsOnSale[index][4],
+          onAdd: onAdd,
           
 
         );

@@ -2,8 +2,9 @@ import 'package:donut_app_4sa/utils/donut_tile.dart';
 import 'package:flutter/material.dart';
 
 class PancakesTab extends StatelessWidget {
+  final Function(double) onAdd; // Función para agregar un ítem al carrito
   //list of donuts
-  final List donutsOnSale = [
+  final List pancakesOnSale = [
     // [ donutFlavor,donutStore, donutPrice, donutColor, imageName ]
     ["Sencillos","Pancakes Tec", "35", Colors.red, "lib/images/Pancakes_1.png"],
     ["Fresa","Casa del Pancake", "42", Colors.blue, "lib/images/Pancakes_2.png"],
@@ -15,9 +16,9 @@ class PancakesTab extends StatelessWidget {
     ["Platano","Flip It", "53", Colors.cyan, "lib/images/Pancakes_8.png"],
   ];
 
+   PancakesTab({super.key, required this.onAdd});
 
-  
-  PancakesTab({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -27,18 +28,19 @@ class PancakesTab extends StatelessWidget {
         //Número de columnas
         crossAxisCount: 2,
         //Proporción entre ancho y alto
-        childAspectRatio: 1/1.5), 
+        childAspectRatio: 1/1.6), 
       //¿Cuántos elementos va a tener?
       itemCount: 8,
       padding: const EdgeInsets.all(12),
       //¿Qué elemento se construira?
       itemBuilder: (context, index){
         return DonutTile(
-          donutFlavor: donutsOnSale[index][0],
-          donutStore: donutsOnSale[index][1],
-          donutPrice: donutsOnSale[index][2],
-          donutColor: donutsOnSale[index][3],
-          imageName: donutsOnSale[index][4],
+          donutFlavor: pancakesOnSale[index][0],
+          donutStore: pancakesOnSale[index][1],
+          donutPrice: pancakesOnSale[index][2],
+          donutColor: pancakesOnSale[index][3],
+          imageName: pancakesOnSale[index][4],
+          onAdd: onAdd,
           
 
         );
